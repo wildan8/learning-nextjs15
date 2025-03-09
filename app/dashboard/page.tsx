@@ -24,9 +24,9 @@ export default async function DashboardPage() {
 
     return (
         <div>
-            <div className="flex items-center justify-center mb-4">
+            <div className="flex mb-3 mt-4 w-full justify-between items-center">
                 <h2 className="text-xl font-medium">Your Blog Articles</h2>
-                <Link className={buttonVariants()} href="/dashboard/create">
+                <Link className="flex items-center rounded-xl bg-blue-600 px-3 py-1 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600" href="/dashboard/create">
                 Create Post
                 </Link>
             </div>

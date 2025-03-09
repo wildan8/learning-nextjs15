@@ -1,10 +1,11 @@
+"use client"
 import Link from "next/link";
 import {RegisterLink, LoginLink, LogoutLink} from "@kinde-oss/kinde-auth-nextjs/components";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 
-export async function Navbar() {
-    const {getUser} = getKindeServerSession();
-    const user = await getUser();
+export function Navbar() {
+    const {getUser} = useKindeBrowserClient();
+    const user = getUser();
     
     return (
         <nav
@@ -23,7 +24,7 @@ export async function Navbar() {
                             className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
                             href="/">Home</Link>
                         <Link className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
-                            href="/dashboard">The Goods</Link>
+                            href="/dashboard">My Articles</Link>
                     </div>
                     <div className="flex items-center justify-end gap-3">
                         {user ? (
@@ -37,7 +38,7 @@ export async function Navbar() {
                                 Login
                             </LoginLink>
                             <RegisterLink className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-3 py-1 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
-                                Got Relate!
+                                Register
                             </RegisterLink >
                             </div>
 
