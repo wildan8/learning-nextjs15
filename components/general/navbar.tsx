@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { Button } from "../ui/button";
-import ThemeToggle from './ThemeToggle';
 import {RegisterLink, LoginLink, LogoutLink} from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
