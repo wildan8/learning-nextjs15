@@ -20,7 +20,7 @@ async function getData(userId: string) {
 export default async function DashboardPage() {
     const {getUser} = getKindeServerSession();
     const user = await getUser();
-    const userArticles = await getData(user.id);
+    const userArticles = await getData(user?.id);
 
     return (
         <div>
